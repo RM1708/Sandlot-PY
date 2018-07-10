@@ -1,0 +1,25 @@
+(tensorflow) rm@ubuntu:~$ python3
+Python 3.6.5 |Anaconda, Inc.| (default, Apr 29 2018, 16:14:56) 
+[GCC 7.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import sys
+>>> import pprint
+>>> print(sys.path)
+['', '/home/rm/anaconda3/envs/tensorflow/lib/python36.zip', '/home/rm/anaconda3/envs/tensorflow/lib/python3.6', '/home/rm/anaconda3/envs/tensorflow/lib/python3.6/lib-dynload', '/home/rm/anaconda3/envs/tensorflow/lib/python3.6/site-packages', '/home/rm/anaconda3/envs/tensorflow/lib/python3.6/site-packages/nbook-0.2-py3.6.egg']
+>>> pprint.pprint(sys.path)
+['',
+ '/home/rm/anaconda3/envs/tensorflow/lib/python36.zip',
+ '/home/rm/anaconda3/envs/tensorflow/lib/python3.6',
+ '/home/rm/anaconda3/envs/tensorflow/lib/python3.6/lib-dynload',
+ '/home/rm/anaconda3/envs/tensorflow/lib/python3.6/site-packages',
+ '/home/rm/anaconda3/envs/tensorflow/lib/python3.6/site-packages/nbook-0.2-py3.6.egg']
+>>> from pprint import pprint as pp
+>>> pp(sys.path)
+['',
+ '/home/rm/anaconda3/envs/tensorflow/lib/python36.zip',
+ '/home/rm/anaconda3/envs/tensorflow/lib/python3.6',
+ '/home/rm/anaconda3/envs/tensorflow/lib/python3.6/lib-dynload',
+ '/home/rm/anaconda3/envs/tensorflow/lib/python3.6/site-packages',
+ '/home/rm/anaconda3/envs/tensorflow/lib/python3.6/site-packages/nbook-0.2-py3.6.egg']
+>>> 
+

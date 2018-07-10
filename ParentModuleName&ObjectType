@@ -1,0 +1,16 @@
+(tensorflow) rm@ubuntu:~$ python3
+Python 3.6.5 |Anaconda, Inc.| (default, Apr 29 2018, 16:14:56) 
+[GCC 7.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import numpy as np
+>>> a = np.array([1, 2, 3])
+>>> a
+array([1, 2, 3])
+>>> type(a)
+<class 'numpy.ndarray'>
+>>> type(a).__module__
+'numpy'
+>>> type(a).__module__ == np.__name__
+True
+>>> 
+

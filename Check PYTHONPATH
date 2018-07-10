@@ -1,0 +1,9 @@
+(tensorflow) rm@ubuntu:~$ python
+Python 3.6.5 |Anaconda, Inc.| (default, Apr 29 2018, 16:14:56) 
+[GCC 7.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import os
+>>> os.environ['PYTHONPATH'].split(os.pathsep)
+['', '/home/rm/Code-GettingStartedWithTF/Chapter 4']
+>>> 
+

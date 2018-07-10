@@ -1,0 +1,60 @@
+############################################################
+From https://stackoverflow.com/questions/27381264/python-3-4-how-to-import-a-module-given-the-full-path
+
+The supported and non-deprecated method according to the 3.6 docs is like this:
+
+def import_file(full_name, path):
+    """Import a python module from a path. 3.4+ only.
+
+    Does not call sys.modules[full_name] = path
+    """
+    from importlib import util
+
+    spec = util.spec_from_file_location(full_name, path)
+    mod = util.module_from_spec(spec)
+
+    spec.loader.exec_module(mod)
+    return mod
+
+answered Sep 13 '17 at 13:16 
+
+#############################################################
+From https://stackoverflow.com/questions/67631/how-to-import-a-module-given-the-full-path
+
+ answered Sep 15 '08 at 22:41
+Sebastian Rittau
+
+import importlib.util
+spec = importlib.util.spec_from_file_location("module.name", "/path/to/file.py")
+foo = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(foo)
+foo.MyClass()
+
+#############################################################
+
+answered Sep 24 '08 at 19:36
+Daryl Spitzer
+
+import sys
+# the mock-0.3.1 dir contains testcase.py, testutils.py & mock.py
+sys.path.append('/foo/bar/mock-0.3.1')
+
+from testcase import TestCase
+from testutils import RunTests
+from mock import Mock, sentinel, patch
+
+##############################################################
+answered Sep 15 '08 at 22:44
+ctcherry
+
+
+configfile = '~/config.py'
+
+import os
+import sys
+
+sys.path.append(os.path.dirname(os.path.expanduser(configfile)))
+
+import config
+
+

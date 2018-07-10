@@ -1,0 +1,63 @@
+#Lutz, Mark. Learning Python (p. 951). O'Reilly Media. Kindle Edition. 
+
+class Number: 
+        def __init__( self, base): 
+                self.base = base 
+        def double( self): 
+                return self.base * 2 
+        def triple( self): 
+                return self.base * 3 
+
+x = Number( 2)                                  # Class instance objects 
+y = Number( 3)                                  # State + methods 
+z = Number( 4) 
+
+x.double()                                      # Normal immediate calls 4 
+
+acts = [x.double, y.double, y.triple, z.double] # List of bound methods 
+for act in acts: # Calls are deferred 
+        print( act())                                   # Call as though functions
+
+######################################################################
+>>> class Number: 
+...         def __init__( self, base): 
+...                 self.base = base 
+...         def double( self): 
+...                 return self.base * 2 
+...         def triple( self): 
+...                 return self.base * 3 
+... 
+>>> x = Number( 2)                                  # Class instance objects 
+>>> y = Number( 3)                                  # State + methods 
+>>> z = Number( 4) 
+>>> 
+>>> x.double()                                      # Normal immediate calls 4 
+4
+>>> acts = [x.double, y.double, y.triple, z.double] # List of bound methods 
+>>> for act in acts: # Calls are deferred 
+...         print( act())                                   # Call as though functions
+... 
+4
+6
+9
+8
+>>> 
+#This also works
+>>> acts = [x.double(), y.double(), y.triple(), z.double()] # List of bound methods 
+>>> for act in acts: # Calls are deferred 
+...         print( act)                                   # Call as though functions
+... 
+4
+6
+9
+8
+>>> bound = x.double
+>>> bound.__self__, bound.__func__ 
+(<__main__.Number object at 0x7f0dd1e80d30>, <function Number.double at 0x7f0dd1e8e0d0>)
+>>> 
+>>> bound.__self__.base
+2
+>>> bound() # Calls bound.__func__( bound.__self__, ...)
+4
+>>> 
+
